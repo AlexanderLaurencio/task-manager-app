@@ -1,0 +1,148 @@
+.task{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-areas: 
+    "title title title title title dueDate"
+    "description description description description description description"
+    "status status priority priority creationDate buttons"
+    ;
+    font-size: var(--font-size-small);
+    height: 100%;
+    max-width: 100%;
+    color: var(--text-primary);
+    padding: var(--space-l);
+    background-color: transparent;
+    border-radius: var(--border-radius-small);
+    gap: var(--space-s) var(--space-s);
+    border: 1.5px solid var(--accent-color);
+    
+}
+
+.task_title, .task_inputTitle{
+    grid-area: title;
+}
+
+.task_description, .task_title{
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.task_description, .task_inputDescription,
+.task_title, .task_inputTitle{
+    font-size: var(--font-size-small);
+}
+
+.task_inputTitle:focus-visible, .task_inputDescription:focus-visible{
+    outline: none;
+}
+.task_inputDescription, .task_inputTitle{
+    align-self: start;
+}
+
+.task_inputTitle, .task_inputDescription{
+    padding: var(--space-s);
+}
+
+.task_description, .task_inputDescription{
+    grid-area: description;
+}
+
+.task_title{
+    font-size: var(--font-size-h6);
+    font-weight: 600;
+}
+
+.task_creationDate{
+    grid-area: creationDate;
+    align-self: center;
+}
+
+.task_creationDate, .task_dueDate{
+    font-size: var(--font-size-extra-small);
+}
+
+.task .statusSelector, .task .prioritySelector, .task_inputTitle, .task_inputDescription{
+    border: 1.5px solid var(--accent-color);
+    border-radius: var(--border-radius-small);
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.task .statusSelector, .task_status{
+    grid-area: status;
+}
+
+.task .prioritySelector, .task_priority{
+    grid-area: priority;
+}
+
+.task_status, .task_priority{
+    border: 1.5px solid var(--accent-color);
+    border-radius: var(--border-radius-small);
+    color: var(--accent-color);
+    font-size: var(--font-size-extra-small);
+    display: grid;
+    place-content: center;
+    user-select: none;
+}
+
+.task .statusSelector, .task .prioritySelector{
+    font-size: var(--font-size-extra-small);
+}
+
+
+.task option{
+    border-radius: 0;
+}
+
+.task .statusSelector::picker-icon, .task .prioritySelector::picker-icon{
+    font-size: .8rem;
+}
+
+.task_dueDate, input[type="date"]{
+    grid-area: dueDate;
+    justify-self: end;
+}
+
+input[type="date"]{
+    align-self: start;
+    max-width: 100px;
+}
+
+.task_buttonsContainer{
+    grid-area: buttons;
+    display: flex;
+    justify-self: end;
+    gap: var(--space-s);
+    max-height: 36px;
+}
+
+.task:hover .button_editTask, .task:hover .button_saveTask, .task:hover .button_removeTask{
+    visibility: visible;
+}
+
+.button_editTask , .button_saveTask, .button_removeTask{
+    width: 28px;
+    justify-self: end;
+    visibility: hidden;
+    border: 0;
+    border-radius: var(--border-radius-small);
+    padding: var(--space-l);
+    display: grid;
+    place-content: center;
+} 
+
+.button_editTask img, .button_saveTask img, .button_removeTask img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button_editTask , .button_saveTask{
+    background-color: var(--green);
+}
+
+.button_removeTask{
+    background-color: var(--red);
+}

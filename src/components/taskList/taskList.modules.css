@@ -1,0 +1,31 @@
+
+.taskList_wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    grid-area: taskList;
+    overflow: hidden;
+}
+
+.taskList{
+    height: 90%;
+    display: grid;
+    gap: var(--space-s);
+    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+    grid-template-rows: 150px;
+    grid-auto-rows: 150px;
+    justify-content: center;
+    scrollbar-width: thin;
+    overflow-y: scroll;
+    padding: var(--space-s);
+}
+
+
+.taskList_loading{
+    align-self: center;
+    justify-self: center;
+    color: var(--text-secondary);
+}
+
+

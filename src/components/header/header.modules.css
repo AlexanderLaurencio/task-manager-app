@@ -1,0 +1,67 @@
+.header{
+    height: 98px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 17fr max-content;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "searchbar statsButton"
+    "subcontainer subcontainer"
+    ;
+    padding: var(--space-s);
+    gap: var(--space-m) var(--space-s);
+    background-color: var(--bg-secondary);
+    grid-area: header;
+}
+
+.button_openStats{
+    grid-area: statsButton;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--bg-primary);
+    border: 1.5px solid var(--accent-color);
+}
+
+
+.button_openStats .stats{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    border: 1.5px solid var(--accent-color);
+    min-width: 200px;
+}
+
+.header button img:hover{
+    opacity: .8;
+}
+
+.header button img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header button{
+    padding: var(--space-s);
+    width: 36px;
+    display: grid;
+    place-content: center;
+    border-radius: var(--border-radius-small);
+    transition: all .125s ease-in-out;
+}
+
+.header_subContainer{
+    display: flex; 
+    flex-wrap: wrap;
+    grid-area: subcontainer;
+    gap: var(--space-xs);
+}
+
+.button_addTask{
+    border: 0;
+    margin-left: auto;
+    background-color: var(--bg-secondary);
+    background-color: var(--accent-color);
+}

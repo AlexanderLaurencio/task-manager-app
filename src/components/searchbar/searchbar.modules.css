@@ -1,0 +1,20 @@
+.searchbar{
+    background-color: var(--bg-primary);
+    grid-area: searchbar;
+    border-radius: var(--border-radius-small);
+    border: 1.5px solid var(--accent-color);
+    padding: 0 var(--space-l);
+}
+
+.searchbar::placeholder, .searchbar{
+    color: var(--accent-color);
+    font-size: var(--font-size-small);
+}
+
+.searchbar:focus-visible{
+    outline: none;
+}
+
+.searchbar:focus{
+    outline: 1.5px solid var(--accent-color);
+}

@@ -1,0 +1,149 @@
+.modal_formAddTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.37);
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+}
+
+.formAddTask{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(7,1fr);
+    grid-template-areas: 
+    "title title title title"
+    "description description description description" 
+    "dueDate dueDate dueDate dueDate"
+    "status status  priority priority"
+    "status status priority priority"
+    "status status priority priority"
+    "error error cancel save"
+    ;
+    max-width: 580px;
+    width: 95dvw;
+    height: 85dvh;
+    max-height: 620px;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-small);
+    gap: var(--space-l) var(--space-m);
+    padding: var(--space-l);
+}
+
+.formAddTask label{
+    color: var(--accent-color);
+    font-size: var(--font-size-small);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formAddTask label{
+    font-weight: 600;
+    font-size: var(--font-size-small);
+    display: flex;
+    flex-direction: column;
+}
+
+.formAddTask label input[type="text"]{
+    background-color: transparent;
+    border-radius: var(--border-radius-small);
+    padding: calc(var(--space-s) + var(--space-xs)) var(--space-l);
+    border: 0;
+    outline: 1.5px solid var(--accent-color);
+}
+
+.formAddTask label input[type="text"]::placeholder, .formAddTask label input[type="text"]{
+    color: var(--accent-color);
+}
+
+.formAddTask label input[type="text"]:focus-visible,
+.formAddTask .statusSelector, .formAddTask .prioritySelector{
+    outline: 1.5px solid var(--accent-color);
+}
+
+.input_taskDescription::placeholder, .input_taskTitle::placeholder{
+    font-size: var(--font-size-small);
+}
+
+.formAddTask .statusSelector, .formAddTask .prioritySelector, .formAddTask option{
+    font-size: calc(var(--font-size-small) - .1rem);
+    font-weight: 400;
+    border-radius: 0;
+}
+
+.formAddTask .statusSelector, .formAddTask .prioritySelector,
+.formAddTask .statusSelector::picker(select), .formAddTask .prioritySelector::picker(select){
+    appearance: base-select;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-small);
+    color: var(--accent-color);
+    border: 0;
+    outline: 1.5px solid var(--accent-color);
+    background-color: var(--bg-primary);
+} 
+
+.labelTitle{
+    grid-area: title;
+}
+
+.labelDescription{
+    grid-area: description;
+}
+
+.labelDueDate{
+    grid-area: dueDate;
+    max-width: 50%;
+    align-self: start;
+}
+
+.labelStatusSelector{
+    grid-area: status;
+}
+
+.labelPrioritySelector{
+    grid-area: priority;
+}
+
+.button_cancelFormAddTask{
+    grid-area: cancel;
+}
+
+.button_saveFormAddTask{
+    grid-area: save;
+}
+
+.button_cancelFormAddTask, .button_saveFormAddTask{
+    display: grid;
+    place-content: center;
+    border: 0;
+    border-radius: var(--border-radius-small);
+    font-size: var(--font-size-p);
+    height: 50%;
+    align-self: end;
+    padding: var(--space-x) var(--space-xs);
+    width: 100%;
+}
+
+.button_saveFormAddTask{
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    border: 1.5px solid var(--bg);
+}
+
+.button_cancelFormAddTask{
+    background-color: transparent;
+    border: 1.5px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.error{
+    font-weight: 600;
+    align-self: end;
+    grid-area: error;
+    color: var(--red);
+}

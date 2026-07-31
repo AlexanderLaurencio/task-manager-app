@@ -1,0 +1,50 @@
+.stats{
+    display: grid;
+    place-content: center;
+    z-index: 10;
+    min-height: 250px;
+    background-color: var(--bg-primary);
+    gap: var(--space-x);
+    padding: var(--space-xxxxl);
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 0 5px 5px var(--shadow);
+}
+
+.stats span{
+    display: inline-block;
+    width: 170px;
+    padding: var(--space-l) var(--space-x);
+    height: 40px;
+    border-radius: var(--border-radius-medium);
+    display: grid;
+    place-content: center;
+    color: var(--bg-primary);
+    font-size: var(--font-size-small);
+    margin: var(--space-l) 0;
+}
+
+.stat-completed{
+    background-color: var(--green);
+}
+
+.stat-pending{
+    background-color: var(--orange);
+}
+
+.stat-overdue{
+    background-color: var(--red);
+}
+
+.stat-inProgress{
+    background-color: var(--purple);
+}
+
+.stat-totalTasks{
+    background-color: var(--accent-color);
+}
+
+
+
+
+
+

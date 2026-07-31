@@ -1,0 +1,30 @@
+#root > .error{
+    height: 100%;
+    grid-area: taskList;
+    display: grid;
+    place-content: center;
+    row-gap: var(--space-s);
+}
+
+#root > .error .errorCode{
+    font-size: var(--font-size-h4);
+    text-align: center;
+    font-weight: 800;
+}
+
+#root > .error .errorMessage{
+    font-weight: 300;
+}
+
+#root > .error .errorButton{
+    height: 30px;
+    width: 100px;
+    font-size: var(--font-size-small);
+    font-weight: 100;
+    border: 1px solid var(--text-primary);
+    border-radius: var(--border-radius-small);
+}
+
+#root > .error .errorButton:hover{
+    opacity: .8;
+}
