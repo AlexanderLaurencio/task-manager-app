@@ -51,12 +51,11 @@ export async function getTasks() {
 
     try {
 
-        let request = await fetch(server, {
+        let request = await fetch(server + location.search, {
             method: "QUERY",
             headers: {
-                "Content-Type": CONTENT_TYPE.json
+                "Content-Type": CONTENT_TYPE.text
             },
-            body: JSON.stringify(query)
         });
         
         let response = await request.json();
