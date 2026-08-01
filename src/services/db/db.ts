@@ -82,7 +82,7 @@ export async function getTasks() {
 
 export async function deleteTask(task_id: number) {
     try {
-        let request = await fetch(server + `/${task_id}`, {
+        let request = await fetch(server + `?id=${task_id}`, {
             method: "DELETE",
         });
 
