@@ -8,5 +8,4 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setupTest.ts',
   },
-  base: "/task-manager-app/"
 })

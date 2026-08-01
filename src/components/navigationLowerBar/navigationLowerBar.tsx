@@ -21,9 +21,11 @@ interface NavigationArrowProps{
 export function NavigationLowerBar({totalTasks, rowsNumber, updateTaskList}: NavigationLowerBarProps ) {
     let buttons: number[] = [];
 
-    console.log(totalTasks);
+    
 
     let totalPages = Math.ceil(rowsNumber / 10);
+    
+    totalTasks;
 
     for (let i = 1; i <= totalPages; i++ ) {
         buttons = ([...buttons, i])
@@ -41,7 +43,7 @@ export function NavigationLowerBar({totalTasks, rowsNumber, updateTaskList}: Nav
 function NavigationButton({page, updateTaskList}: NavigationButtonProps) {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    console.log(searchParams,);
+    searchParams;
 
     function navigatePage() {
         setSearchParams((params) => {
@@ -64,7 +66,8 @@ function NavigationButton({page, updateTaskList}: NavigationButtonProps) {
 export function NavigationArrowLeft({totalPages, updateTaskList}: NavigationArrowProps) {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    console.log(searchParams,totalPages);
+    searchParams;
+    totalPages;
 
     function navigateToLeft() {
         let url = new URLSearchParams(location.search);
@@ -93,7 +96,7 @@ export function NavigationArrowLeft({totalPages, updateTaskList}: NavigationArro
 export function NavigationArrowRight({totalPages, updateTaskList}: NavigationArrowProps) {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    console.log(searchParams);
+    searchParams
 
     function navigateToRight() {
         let url = new URLSearchParams(location.search);

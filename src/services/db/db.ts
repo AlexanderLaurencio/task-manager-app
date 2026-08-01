@@ -53,9 +53,7 @@ export async function getTasks() {
 
     query;
 
-    let urlSent = server + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
-
-    console.log(urlSent)
+    let urlSent = server + "/" + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
 
     try {
 
@@ -71,6 +69,8 @@ export async function getTasks() {
         if (!request.ok) {
             throw new Error(response)
         }
+
+        console.log(response);
         
         return response
 
