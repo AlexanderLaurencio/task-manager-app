@@ -52,7 +52,7 @@ export async function getTasks() {
     let query = { pattern: pattern, filter: filter, order: order , page: page};
     console.log(query);
 
-    let urlSent = server + location.search;
+    let urlSent = server + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
 
     console.log(urlSent)
 
