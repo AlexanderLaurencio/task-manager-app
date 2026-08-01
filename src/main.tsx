@@ -5,10 +5,10 @@ import App from './App.tsx'
 import { BrowserRouter, Routes, Route } from "react-router";
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/task-manager-app">
     <StrictMode>
         <Routes>
-          <Route path="/tasks" element={<App />} />
+          <Route path="/" element={<App />} />
         </Routes>
     </StrictMode>
   </BrowserRouter>,
