@@ -1,6 +1,6 @@
 import { type StatsProps } from "../types/types";
 
-export const server = "https://task-manager-backend-xqzq.onrender.com";
+export const server = "https://task-manager-backend-p7ga.onrender.com/";
 
 export const CONTENT_TYPE = {
     text: "text/plain",
