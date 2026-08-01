@@ -14,8 +14,12 @@ export default function Filter({updateTasks}: UpdateTaskListProps) {
         updateTasks()
     };
 
+    let urlParams = new URLSearchParams(location.search);
+
+    let filter = !urlParams.get("filter") ? "all" : urlParams.get("filter")
+
     return(
-        <select data-testid="taskFilter" className="filter" 
+        <select defaultValue={filter!} data-testid="taskFilter" className="filter" 
                 onChange={(e) => onChange(e.target.value)}>
             <option value="all">All</option>
             <option value="completed">Completed</option>

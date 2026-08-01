@@ -17,8 +17,13 @@ export function SearchBar({updateTasks}: UpdateTaskListProps) {
         updateTasks()
     };
 
+    let urlParams = new URLSearchParams(location.search);
+
+    let pattern = urlParams.get("pattern") && urlParams.get("pattern");
+
     return(
         <input type="search" onChange={(e) => onChange(e.target.value)} className="searchbar" 
-        data-testid="searchbar" placeholder="Search something"/>
+        data-testid="searchbar" placeholder="Search something" 
+        defaultValue={pattern!}/>
     )
 };

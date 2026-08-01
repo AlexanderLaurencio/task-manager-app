@@ -14,10 +14,14 @@ export default function Sorter({updateTasks}: UpdateTaskListProps) {
         });
         updateTasks()
     };
+
+    let urlParams = new URLSearchParams(location.search);
+
+    let order = !urlParams.get("order") ? "a-z" : urlParams.get("order");
     
     return(
         <select name="sorter" className="sorter" data-testid="sorter" 
-                onChange={(e) => onChange(e.target.value)}>
+                onChange={(e) => onChange(e.target.value)} defaultValue={order!}>
             <option value="a-z">A-Z</option>
             <option value="z-a">Z-A</option>
             <option value="earliestCreationDate">Earliest Creation</option>
