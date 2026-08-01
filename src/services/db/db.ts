@@ -53,7 +53,7 @@ export async function getTasks() {
 
     query;
 
-    let urlSent = server + "/" + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
+    let urlSent = server + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
 
     try {
 
