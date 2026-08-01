@@ -25,6 +25,9 @@ Technologies used:
 -JavaScript
 -ReactJS
 -TypeScript
+
+
+The frontend was deployed using GitHub pages, and the backend in Render.
 -NodeJS
 -SQLite3
 
