@@ -5,7 +5,7 @@ import { type UpdateTaskListProps } from "../../types/types";
 export default function Sorter({updateTasks}: UpdateTaskListProps) {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    console.log(searchParams);
+    searchParams;
 
     async function onChange(order: string) {
         setSearchParams((params) => {

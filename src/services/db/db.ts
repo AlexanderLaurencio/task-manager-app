@@ -50,7 +50,8 @@ export async function getTasks() {
 
     //This is the query object I sent when I used the QUERY
     let query = { pattern: pattern, filter: filter, order: order , page: page};
-    console.log(query);
+
+    query;
 
     let urlSent = server + `?pattern=${pattern}&filter=${filter}&order=${order}&page=${page}`;
 
