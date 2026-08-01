@@ -37,23 +37,28 @@ export async function createTask({ task_title, task_description, task_status, ta
 
 export async function getTasks() {
 
-    let url = new URLSearchParams(location.search);
+    let urlParams = new URLSearchParams(location.search);
 
-    let pattern = !url.get("pattern") ? null : url.get("pattern");
+    let pattern = !urlParams.get("pattern") ? null : urlParams.get("pattern");
     
-    let filter = !url.get("filter") ? "all" : url.get("filter");
+    let filter = !urlParams.get("filter") ? "all" : urlParams.get("filter");
 
-    let order = !url.get("order") ? "a-z" : url.get("order");
+    let order = !urlParams.get("order") ? "a-z" : urlParams.get("order");
 
-    let page = !url.get("page") ? "0" : url.get("page");
+    let page = !urlParams.get("page") ? "0" : urlParams.get("page");
 
+
+    //This is the query object I sent when I used the QUERY
     let query = { pattern: pattern, filter: filter, order: order , page: page};
-
     console.log(query);
+
+    let urlSent = server + location.search;
+
+    console.log(urlSent)
 
     try {
 
-        let request = await fetch(server + location.search, {
+        let request = await fetch(urlSent, {
             method: "GET",
             headers: {
                 "Content-Type": CONTENT_TYPE.text
