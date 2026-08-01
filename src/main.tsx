@@ -8,7 +8,7 @@ createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename="/task-manager-app">
     <StrictMode>
         <Routes>
-          <Route path="/tasks" element={<App />} />
+          <Route path="/" element={<App />} />
         </Routes>
     </StrictMode>
   </BrowserRouter>,
