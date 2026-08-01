@@ -2,12 +2,14 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './global.css'
 import App from './App.tsx'
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 createRoot(document.getElementById('root')!).render(
-  <HashRouter >
+  <BrowserRouter basename="/task-manager-app">
     <StrictMode>
-        <App />
+        <Routes>
+          <Route path="/tasks" element={<App />} />
+        </Routes>
     </StrictMode>
-  </HashRouter>,
+  </BrowserRouter>,
 )
