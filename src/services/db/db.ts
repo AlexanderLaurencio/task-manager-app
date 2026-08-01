@@ -50,11 +50,11 @@ export async function getTasks() {
     let query = { pattern: pattern, filter: filter, order: order , page: page};
 
     console.log(query);
-    
+
     try {
 
         let request = await fetch(server + location.search, {
-            method: "QUERY",
+            method: "GET",
             headers: {
                 "Content-Type": CONTENT_TYPE.text
             },
